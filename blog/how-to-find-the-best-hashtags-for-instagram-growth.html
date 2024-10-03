@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="h-full scroll-smooth bg-white antialiased dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100"
+>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        How to Find the Best Hashtags for Instagram Growth
+    </title>
+    <meta
+      name="description"
+      content="Learn how to find the best hashtags for Instagram growth. This guide provides a step-by-step tutorial on how to use hashtags to grow your Instagram account."
+    />
+    <meta
+      name="keywords"
+      content="blog, web scraping, social media, api"
+    />
+    <meta name="author" content="Adrian Horning" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
+
+    <script>
+      // Dark mode script (unchanged)
+    </script>
+    <style>
+      body {
+        font-family: "Outfit", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="h-full">
+    <!-- Navigation Links -->
+    <nav class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400">
+          Scrape Creators Home
+        </a>
+        <a href="/blog" class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400">
+          &larr; Back to All Posts
+        </a>
+      </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Blog Post Header -->
+      <header class="mb-10">
+        <h1 class="text-4xl font-bold mb-4">How to Find the Best Hashtags for Instagram Growth</h1>
+        <div class="flex items-center text-zinc-500 dark:text-zinc-400">
+          <span>By Adrian Horning</span>
+          <span class="mx-2">•</span>
+          <time datetime="2023-05-01">October 5, 2024</time>
+        </div>
+      </header>
+
+      <!-- Featured Image -->
+      <img src="../assets//best_hashtags_for_instagram_growth.png" alt="Featured image" class="w-full h-auto rounded-lg shadow-md mb-10">
+
+      <!-- Blog Post Content -->
+      <article class="prose prose-zinc dark:prose-invert max-w-none space-y-6">
+        <p>Instagram is a treasure trove of valuable data for businesses, researchers, and marketers. Whether you're tracking brand mentions, analyzing influencer reach, or conducting market research, scraping Instagram can provide invaluable insights. In this guide, we'll walk through how to scrape Instagram using Python, covering the basics and some advanced techniques.</p>
+
+        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Setting Up Your Environment</h2>
+
+        <p>Before we dive into the code, let's set up our development environment:</p>
+
+        <ol class="list-decimal pl-6 space-y-2 my-6">
+          <li>Install Python: If you haven't already, download and install Python from <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">python.org</a>.</li>
+          <li>Install required libraries: We'll be using the <code>instaloader</code> library for this tutorial. Install it using pip:
+            <pre><code class="language-bash">pip install instaloader</code></pre>
+          </li>
+        </ol>
+
+        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Basic Instagram Scraping</h2>
+
+        <p>Let's start with some basic scraping tasks:</p>
+
+        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">1. Downloading Profile Pictures</h3>
+
+        <p>Here's how to download profile pictures of Instagram users:</p>
+
+        <pre><code class="language-python">import instaloader
+
+# Create an instance of Instaloader
+L = instaloader.Instaloader()
+
+# Download profile picture
+L.download_profile("instagram", profile_pic_only=True)
+</code></pre>
+
+        <p>This script will download the profile picture of the official Instagram account.</p>
+
+        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">2. Downloading Posts</h3>
+
+        <p>To download all posts from a profile:</p>
+
+        <pre><code class="language-python">import instaloader
+
+# Create an instance of Instaloader
+L = instaloader.Instaloader()
+
+# Download all posts from a profile
+L.download_profile("instagram", profile_pic_only=False)
+</code></pre>
+
+        <p>This will download all posts, including images, videos, and captions, from the specified profile.</p>
+
+        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">3. Fetching Post Details</h3>
+
+        <p>To get details of a specific post:</p>
+
+        <pre><code class="language-python">import instaloader
+
+# Create an instance of Instaloader
+L = instaloader.Instaloader()
+
+# Fetch a specific post
+post = instaloader.Post.from_shortcode(L.context, "CuVN9aMSRKK")
+
+print(f"Post date: {post.date}")
+print(f"Post caption: {post.caption}")
+print(f"Post likes: {post.likes}")
+print(f"Post comments: {post.comments}")
+</code></pre>
+
+        <p>Replace "CuVN9aMSRKK" with the shortcode of the post you want to analyze.</p>
+
+        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Advanced Instagram Scraping</h2>
+
+        <p>Now let's look at some more advanced scraping techniques:</p>
+
+        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">1. Scraping Hashtags</h3>
+
+        <p>To scrape posts with a specific hashtag:</p>
+
+        <pre><code class="language-python">import instaloader
+
+# Create an instance of Instaloader
+L = instaloader.Instaloader()
+
+# Scrape posts with a specific hashtag
+for post in instaloader.Hashtag.from_name(L.context, "python").get_posts():
+    print(post.caption)
+    # Break after 10 posts to avoid long runtime
+    if post.mediaid > 10:
+        break
+</code></pre>
+
+        <p>This script will print the captions of the 10 most recent posts with the hashtag #python.</p>
+
+        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">2. Analyzing User Followers</h3>
+
+        <p>To analyze a user's followers:</p>
+
+        <pre><code class="language-python">import instaloader
+
+# Create an instance of Instaloader
+L = instaloader.Instaloader()
+
+# Login (replace with your username and password)
+L.login("your_username", "your_password")
+
+# Get profile of a specific user
+profile = instaloader.Profile.from_username(L.context, "instagram")
+
+# Iterate over followers
+for follower in profile.get_followers():
+    print(follower.username)
+    # Break after 10 followers to avoid long runtime
+    if follower.userid > 10:
+        break
+</code></pre>
+
+        <p>Note: You need to log in to access follower information. Replace "your_username" and "your_password" with your Instagram credentials.</p>
+
+        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">3. Analyzing User Activity</h3>
+
+        <p>To analyze a user's recent activity:</p>
+
+        <pre><code class="language-python">import instaloader
+
+# Create an instance of Instaloader
+L = instaloader.Instaloader()
+
+# Login (replace with your username and password)
+L.login("your_username", "your_password")
+
+# Get profile of a specific user
+profile = instaloader.Profile.from_username(L.context, "instagram")
+
+# Iterate over the user's posts
+for post in profile.get_posts():
+    print(f"Post date: {post.date}")
+    print(f"Post likes: {post.likes}")
+    print(f"Post comments: {post.comments}")
+    print("---")
+    # Break after 5 posts to avoid long runtime
+    if post.mediaid > 5:
+        break
+</code></pre>
+
+        <p>This script will print details of the user's 5 most recent posts.</p>
+
+        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Best Practices and Considerations</h2>
+
+        <p>When scraping Instagram, keep these best practices in mind:</p>
+
+        <ol class="list-decimal pl-6 space-y-2 my-6">
+          <li><strong>Respect rate limits</strong>: Instagram has rate limits to prevent excessive scraping. Space out your requests to avoid being blocked.</li>
+          <li><strong>Use authentication</strong>: Logging in allows you to access more data and reduces the likelihood of being blocked.</li>
+          <li><strong>Handle exceptions</strong>: Instagram's structure can change, so make sure your code can handle exceptions gracefully.</li>
+          <li><strong>Respect privacy</strong>: Only scrape publicly available data unless you have explicit permission.</li>
+          <li><strong>Stay updated</strong>: Instagram and scraping libraries frequently update. Keep your code and libraries up to date.</li>
+        </ol>
+
+        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Conclusion</h2>
+
+        <p>Scraping Instagram with Python can provide valuable insights for businesses and researchers. By using libraries like Instaloader, you can easily access a wealth of data from Instagram profiles, posts, and hashtags.</p>
+
+        <p>Remember to use these techniques responsibly and in compliance with Instagram's terms of service. Happy scraping!</p>
+
+        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Additional Resources</h2>
+
+        <ul class="list-disc pl-6 space-y-2 my-6">
+          <li><a href="https://instaloader.github.io/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">Instaloader Documentation</a></li>
+          <li><a href="https://www.instagram.com/developer/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">Instagram API Documentation</a></li>
+          <li><a href="https://docs.python.org/3/library/exceptions.html" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">Python Exception Handling</a></li>
+        </ul>
+      </article>
+    </main>
+
+    <!-- Footer (unchanged) -->
+    <div
+      class="flex flex-col md:flex-row mt-10 gap-10 md:justify-between px-10 md:px-20 lg:px-48 py-14 border-t border-neutral-200/10"
+    >
+      <div class="flex flex-col gap-2">
+        <div class="font-medium text-base">Scrape Creators</div>
+        <div class="text-sm text-zinc-500 dark:text-zinc-400">
+          Copyright © <span id="current-year"></span>. All rights reserved.
+        </div>
+      </div>
+      <div class="flex flex-row gap-24">
+        <div class="flex flex-col text-sm gap-4">
+            <div class="font-medium">Resources</div>
+            <a class="text-zinc-500 dark:text-zinc-400 cursor-pointer" href="/blog">
+            Blog
+            </a>
+        </div>
+        <div class="flex flex-col text-sm gap-4">
+          <div class="font-medium">Contact</div>
+          <p class="text-zinc-500 dark:text-zinc-400 cursor-pointer">
+            adrian@thewebscrapingguy.com
+          </p>
+          <a
+            class="text-zinc-500 dark:text-zinc-400 cursor-pointer"
+            href="https://twitter.com/adrian_horning_"
+            >Twitter</a
+          >
+          <a
+            class="text-zinc-500 dark:text-zinc-400 cursor-pointer"
+            href="https://instagram.com/adrianhorning"
+            >Instagram</a
+          >
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
