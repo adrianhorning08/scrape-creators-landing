@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="h-full scroll-smooth bg-white antialiased dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100"
+>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Web Scraping 101: Fundamentals</title>
+    <meta
+      name="description"
+      content="Web scraping is the process of automatically extracting data from websites. This guide provides a comprehensive overview of web scraping, including its benefits, common techniques, and best practices."
+    />
+    <meta
+      name="keywords"
+      content="blog, web scraping, social media, api"
+    />
+    <meta name="author" content="Adrian Horning" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
+
+    <script>
+      // Dark mode script (unchanged)
+    </script>
+    <style>
+      body {
+        font-family: "Outfit", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="h-full">
+    <!-- Navigation Links -->
+    <nav class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400">
+          Scrape Creators Home
+        </a>
+        <a href="/blog" class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400">
+          &larr; Back to All Posts
+        </a>
+      </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Blog Post Header -->
+      <header class="mb-10">
+        <h1 class="text-4xl font-bold mb-4">Web Scraping 101: Fundamentals</h1>
+        <div class="flex items-center text-zinc-500 dark:text-zinc-400">
+          <span>By Adrian Horning</span>
+          <span class="mx-2">•</span>
+          <time datetime="2023-05-01">October 13, 2024</time>
+        </div>
+      </header>
+
+      <!-- Featured Image -->
+      <img src="../assets/web_scraping_101_fundamentals.png" alt="Featured image" class="w-full h-auto rounded-lg shadow-md mb-10">
+
+      <!-- Blog Post Content -->
+      <article class="prose prose-zinc dark:prose-invert max-w-none space-y-6">
+        <p>Web scraping is a powerful technique for automatically extracting data from websites. In today's data-driven world, it has become an essential skill for developers, data scientists, and businesses looking to gather valuable information from the web. This article will cover the fundamentals of web scraping, including its definition, uses, techniques, tools, and best practices.</p>
+
+        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">What is Web Scraping?</h2>
+
+        <p>Web scraping is the automated process of extracting data from websites<a href="https://www.geeksforgeeks.org/introduction-to-web-scraping/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>. Instead of manually copying and pasting information, web scraping software, known as web scrapers, automatically loads and extracts data from websites based on user requirements<a href="https://www.geeksforgeeks.org/introduction-to-web-scraping/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>. This technique allows for efficient collection of large amounts of data that would be impractical to gather manually.</p>
+
+        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Uses of Web Scraping</h2>
+
+        <p>Web scraping finds applications in various fields, both professional and personal. Some popular uses include:</p>
+
+        <ul class="list-disc pl-6 space-y-2 my-6">
+          <li><strong>Brand Monitoring and Competition Analysis</strong>: Web scraping is used to gather customer feedback about products or services and extract competitor data in a structured, usable format<a href="https://www.geeksforgeeks.org/introduction-to-web-scraping/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</li>
+          <li><strong>Machine Learning</strong>: Large datasets required for machine learning projects are often collected through web scraping<a href="https://www.geeksforgeeks.org/introduction-to-web-scraping/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</li>
+          <li><strong>Financial Data Analysis</strong>: Web scraping helps keep records of stock market data in a usable format for insights and analysis<a href="https://www.geeksforgeeks.org/introduction-to-web-scraping/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</li>
+          <li><strong>Social Media Analysis</strong>: It is used to extract data from social media sites to gauge customer trends and reactions to campaigns<a href="https://www.geeksforgeeks.org/introduction-to-web-scraping/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</li>
+          <li><strong>SEO Monitoring</strong>: Web scraping helps understand how content ranking changes over time on search engines<a href="https://www.geeksforgeeks.org/introduction-to-web-scraping/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Web Scraping Techniques</h2>
+
+        <p>There are two main approaches to web scraping:</p>
+
+        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">Manual Extraction</h3>
+
+        <p>This involves manually copying and pasting content from websites. While tedious and time-consuming, it can be effective for sites with strong anti-scraping measures<a href="https://www.geeksforgeeks.org/introduction-to-web-scraping/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</p>
+
+        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">Automated Extraction</h3>
+
+        <p>This approach uses web scraping software to automatically extract data based on user requirements. Some common automated techniques include:</p>
+
+        <ul class="list-disc pl-6 space-y-2 my-6">
+          <li><strong>HTML Parsing</strong>: This involves analyzing HTML code to extract relevant information, typically using JavaScript<a href="https://www.geeksforgeeks.org/introduction-to-web-scraping/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</li>
+          <li><strong>DOM Parsing</strong>: The Document Object Model (DOM) is used to modify and update the structure, style, and content of XML documents<a href="https://www.geeksforgeeks.org/introduction-to-web-scraping/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</li>
+          <li><strong>Web Scraping Software</strong>: Many specialized tools are available for extracting data from websites, either off-the-shelf or custom-built for specific needs<a href="https://www.geeksforgeeks.org/introduction-to-web-scraping/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Web Scraping Tools</h2>
+
+        <p>Several tools are available to simplify the web scraping process. Here are some popular options:</p>
+
+        <ul class="list-disc pl-6 space-y-2 my-6">
+          <li><strong>Crawlbase</strong>: Used by thousands of companies worldwide, Crawlbase offers a Scraper API that can extract data from websites built with various technologies like JavaScript, Meteor, and Angular<a href="https://crawlbase.com/blog/web-scraping-the-comprehensive-guide/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[2]</a>.</li>
+          <li><strong>ScrapingBee</strong>: This tool provides a REST API with support for data extraction using CSS selectors, screenshot capabilities, and access to both traditional and premium residential proxies<a href="https://www.scrapingbee.com/blog/web-scraping-tools/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[3]</a>.</li>
+          <li><strong>Scrapy</strong>: An open-source web-crawling framework written in Python, Scrapy is known for its scalability and ability to handle large-scale web scraping projects<a href="https://www.scrapingbee.com/blog/web-scraping-tools/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[3]</a>.</li>
+          <li><strong>WebScraper.io</strong>: A popular Chrome extension that allows users to scrape websites directly from their browser without writing code<a href="https://www.scrapingbee.com/blog/web-scraping-tools/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[3]</a>.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">How Web Scraping Works</h2>
+
+        <p>Web scrapers typically follow these steps to extract data:</p>
+
+        <ol class="list-decimal pl-6 space-y-2 my-6">
+          <li>Send an HTTP request to the target website.</li>
+          <li>Receive the server's response, usually in HTML format.</li>
+          <li>Parse the HTML content to locate the desired data.</li>
+          <li>Extract the relevant information.</li>
+          <li>Store the extracted data in a structured format (e.g., CSV, JSON, or database).</li>
+        </ol>
+
+        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Best Practices for Web Scraping</h2>
+
+        <p>To ensure ethical and efficient web scraping, consider the following best practices:</p>
+
+        <ol class="list-decimal pl-6 space-y-2 my-6">
+          <li><strong>Respect website policies</strong>: Always check the website's robots.txt file and terms of service before scraping<a href="https://crawlbase.com/blog/web-scraping-the-comprehensive-guide/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[2]</a>.</li>
+          <li><strong>Use appropriate request rates</strong>: Avoid overwhelming the server with too many requests in a short time<a href="https://crawlbase.com/blog/web-scraping-the-comprehensive-guide/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[2]</a>.</li>
+          <li><strong>Identify your scraper</strong>: Use a custom user agent to identify your scraper and provide contact information if needed<a href="https://crawlbase.com/blog/web-scraping-the-comprehensive-guide/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[2]</a>.</li>
+          <li><strong>Handle errors gracefully</strong>: Implement proper error handling to deal with network issues, changes in website structure, or anti-scraping measures<a href="https://crawlbase.com/blog/web-scraping-the-comprehensive-guide/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[2]</a>.</li>
+          <li><strong>Regularly update your scraper</strong>: Websites often change their structure, so keep your scraper up-to-date<a href="https://crawlbase.com/blog/web-scraping-the-comprehensive-guide/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[2]</a>.</li>
+          <li><strong>Use IP rotation and proxies</strong>: To avoid being blocked, rotate IP addresses and use proxy servers<a href="https://crawlbase.com/blog/web-scraping-the-comprehensive-guide/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[2]</a>.</li>
+          <li><strong>Parse and verify extracted data</strong>: Ensure the accuracy and consistency of the scraped data<a href="https://crawlbase.com/blog/web-scraping-the-comprehensive-guide/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[2]</a>.</li>
+        </ol>
+
+        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Challenges in Web Scraping</h2>
+
+        <p>While web scraping can be a powerful tool, it comes with its own set of challenges:</p>
+
+        <ul class="list-disc pl-6 space-y-2 my-6">
+          <li><strong>Anti-Scraping Measures</strong>: Many websites implement measures to detect and block web scrapers, such as CAPTCHAs, IP blocking, and user agent filtering<a href="https://crawlbase.com/blog/web-scraping-the-comprehensive-guide/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[2]</a>.</li>
+          <li><strong>Dynamic Content</strong>: Websites that heavily rely on JavaScript to load content can be challenging to scrape using traditional methods<a href="https://crawlbase.com/blog/web-scraping-the-comprehensive-guide/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[2]</a>.</li>
+          <li><strong>Legal and Ethical Considerations</strong>: Web scraping may raise legal and ethical concerns, especially when dealing with copyrighted content or personal data<a href="https://crawlbase.com/blog/web-scraping-the-comprehensive-guide/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[2]</a>.</li>
+          <li><strong>Data Quality and Consistency</strong>: Ensuring the accuracy and consistency of scraped data can be challenging, especially when dealing with large volumes of information<a href="https://crawlbase.com/blog/web-scraping-the-comprehensive-guide/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[2]</a>.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">The Future of Web Scraping</h2>
+
+        <p>As web technologies continue to evolve, so do web scraping techniques. Some emerging trends include:</p>
+
+        <ul class="list-disc pl-6 space-y-2 my-6">
+          <li><strong>AI-Powered Scraping</strong>: Machine learning algorithms are being used to improve the accuracy and efficiency of web scraping<a href="https://www.nimbleway.com/blog/the-definitive-guide-to-web-scraping-in-2024" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[4]</a>.</li>
+          <li><strong>Increased Use of APIs</strong>: More websites are offering APIs as an alternative to web scraping, providing structured data access<a href="https://www.nimbleway.com/blog/the-definitive-guide-to-web-scraping-in-2024" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[4]</a>.</li>
+          <li><strong>Ethical Scraping Practices</strong>: There's a growing emphasis on responsible and ethical web scraping practices to maintain a balance between data collection and website owners' interests<a href="https://www.nimbleway.com/blog/the-definitive-guide-to-web-scraping-in-2024" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[4]</a>.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Conclusion</h2>
+
+        <p>Web scraping is a valuable skill in today's data-driven world. By understanding the fundamentals, techniques, and best practices outlined in this article, you can harness the power of web scraping to gather valuable insights and data for your projects or business needs. As with any powerful tool, it's essential to use web scraping responsibly and ethically, respecting website policies and legal considerations.</p>
+
+        <p>Citations:</p>
+        <ul class="list-decimal pl-6 space-y-2 my-6">
+          <li><a href="https://www.geeksforgeeks.org/introduction-to-web-scraping/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a> https://www.geeksforgeeks.org/introduction-to-web-scraping/</li>
+          <li><a href="https://crawlbase.com/blog/web-scraping-the-comprehensive-guide/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[2]</a> https://crawlbase.com/blog/web-scraping-the-comprehensive-guide/</li>
+          <li><a href="https://www.scrapingbee.com/blog/web-scraping-tools/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[3]</a> https://www.scrapingbee.com/blog/web-scraping-tools/</li>
+          <li><a href="https://www.nimbleway.com/blog/the-definitive-guide-to-web-scraping-in-2024" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[4]</a> https://www.nimbleway.com/blog/the-definitive-guide-to-web-scraping-in-2024</li>
+          <li><a href="https://www.promptcloud.com/blog/the-ultimate-guide-to-scrape-the-web-techniques-tools-and-best-practices/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[5]</a> https://www.promptcloud.com/blog/the-ultimate-guide-to-scrape-the-web-techniques-tools-and-best-practices/</li>
+          <li><a href="https://bluegoatcyber.com/blog/essentials-of-web-scraping/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[6]</a> https://bluegoatcyber.com/blog/essentials-of-web-scraping/</li>
+          <li><a href="https://lagrowthmachine.com/web-scraping-guide/" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[7]</a> https://lagrowthmachine.com/web-scraping-guide/</li>
+        </ul>
+      </article>
+    </main>
+
+    <!-- Footer (unchanged) -->
+    <div
+      class="flex flex-col md:flex-row mt-10 gap-10 md:justify-between px-10 md:px-20 lg:px-48 py-14 border-t border-neutral-200/10"
+    >
+      <div class="flex flex-col gap-2">
+        <div class="font-medium text-base">Scrape Creators</div>
+        <div class="text-sm text-zinc-500 dark:text-zinc-400">
+          Copyright © <span id="current-year"></span>. All rights reserved.
+        </div>
+      </div>
+      <div class="flex flex-row gap-24">
+        <div class="flex flex-col text-sm gap-4">
+            <div class="flex flex-col text-sm gap-4">
+                <div class="font-medium">Resources</div>
+                <a class="text-zinc-500 dark:text-zinc-400 cursor-pointer" href="/blog">
+                Blog
+            </a>
+        </div>
+        <div class="flex flex-col text-sm gap-4">
+          <div class="font-medium">Contact</div>
+          <p class="text-zinc-500 dark:text-zinc-400 cursor-pointer">
+            adrian@thewebscrapingguy.com
+          </p>
+          <a
+            class="text-zinc-500 dark:text-zinc-400 cursor-pointer"
+            href="https://twitter.com/adrian_horning_"
+            >Twitter</a
+          >
+          <a
+            class="text-zinc-500 dark:text-zinc-400 cursor-pointer"
+            href="https://instagram.com/adrianhorning"
+            >Instagram</a
+          >
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
