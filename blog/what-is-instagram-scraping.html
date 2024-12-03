@@ -7,6 +7,21 @@
     <meta charset="utf-8" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-GSSJK7CVY2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-GSSJK7CVY2");
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,17 +30,12 @@
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-        What is Instagram Scraping?
-    </title>
+    <title>What is Instagram Scraping?</title>
     <meta
       name="description"
       content="Instagram scraping is the process of extracting data from Instagram profiles, posts, and hashtags using automated tools. This can be useful for a variety of purposes, such as market research, influencer analysis, and brand monitoring."
     />
-    <meta
-      name="keywords"
-      content="blog, web scraping, social media, api"
-    />
+    <meta name="keywords" content="blog, web scraping, social media, api" />
     <meta name="author" content="Adrian Horning" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
 
@@ -42,10 +52,16 @@
     <!-- Navigation Links -->
     <nav class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex justify-between items-center">
-        <a href="/" class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400">
+        <a
+          href="/"
+          class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400"
+        >
           Scrape Creators Home
         </a>
-        <a href="/blog" class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400">
+        <a
+          href="/blog"
+          class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400"
+        >
           &larr; Back to All Posts
         </a>
       </div>
@@ -63,13 +79,29 @@
       </header>
 
       <!-- Featured Image -->
-      <img src="../assets/what_is_instagram_scraping.png" alt="Featured image" class="w-full h-auto rounded-lg shadow-md mb-10">
+      <img
+        src="../assets/what_is_instagram_scraping.png"
+        alt="Featured image"
+        class="w-full h-auto rounded-lg shadow-md mb-10"
+      />
 
       <!-- Blog Post Content -->
       <article class="prose prose-zinc dark:prose-invert max-w-none space-y-6">
-        <p>Instagram has become a powerhouse in the world of social media marketing, with businesses and influencers alike vying for followers and engagement. Understanding your follower base or that of your competitors can provide valuable insights for marketing strategies. In this guide, we'll walk through how to scrape Instagram followers using Python, providing you with the tools to gather and analyze this crucial data.</p>
+        <p>
+          Instagram has become a powerhouse in the world of social media
+          marketing, with businesses and influencers alike vying for followers
+          and engagement. Understanding your follower base or that of your
+          competitors can provide valuable insights for marketing strategies. In
+          this guide, we'll walk through how to scrape Instagram followers using
+          Python, providing you with the tools to gather and analyze this
+          crucial data.
+        </p>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Prerequisites</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Prerequisites
+        </h2>
 
         <p>Before we dive into the code, make sure you have the following:</p>
 
@@ -79,35 +111,66 @@
           <li>An Instagram account (for authentication)</li>
         </ul>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Setting Up Your Environment</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Setting Up Your Environment
+        </h2>
 
-        <p>First, we need to install the necessary libraries. We'll be using <code>instaloader</code>, a powerful Python library for scraping Instagram data. Open your terminal and run the following command:</p>
+        <p>
+          First, we need to install the necessary libraries. We'll be using
+          <code>instaloader</code>, a powerful Python library for scraping
+          Instagram data. Open your terminal and run the following command:
+        </p>
 
         <pre><code class="language-bash">pip install instaloader</code></pre>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Writing the Scraper</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Writing the Scraper
+        </h2>
 
-        <p>Now, let's write a Python script to scrape Instagram followers. We'll break it down step by step:</p>
+        <p>
+          Now, let's write a Python script to scrape Instagram followers. We'll
+          break it down step by step:
+        </p>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">Step 1: Import the necessary modules</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          Step 1: Import the necessary modules
+        </h3>
 
         <pre><code class="language-python">import instaloader
 import csv
 from datetime import datetime</code></pre>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">Step 2: Set up the Instaloader instance</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          Step 2: Set up the Instaloader instance
+        </h3>
 
         <pre><code class="language-python">L = instaloader.Instaloader()
 
 # Optionally, login to scrape a private profile
 # L.login("your_username", "your_password")  # Replace with your Instagram credentials</code></pre>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">Step 3: Define the target profile and create a Profile object</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          Step 3: Define the target profile and create a Profile object
+        </h3>
 
         <pre><code class="language-python">username = "instagram"  # Replace with the username you want to scrape
 profile = instaloader.Profile.from_username(L.context, username)</code></pre>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">Step 4: Scrape and save followers' data</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          Step 4: Scrape and save followers' data
+        </h3>
 
         <pre><code class="language-python"># Prepare CSV file
 csv_file = f"{username}_followers_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
@@ -132,38 +195,118 @@ with open(csv_file, 'w', newline='', encoding='utf-8') as file:
 
 print(f"Scraping complete. Data saved to {csv_file}")</code></pre>
 
-        <p>This script will create a CSV file with the follower data, including username, full name, biography, privacy status, verification status, post count, follower count, and following count.</p>
+        <p>
+          This script will create a CSV file with the follower data, including
+          username, full name, biography, privacy status, verification status,
+          post count, follower count, and following count.
+        </p>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Running the Scraper</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Running the Scraper
+        </h2>
 
-        <p>To run the scraper, save the above code in a Python file (e.g., <code>instagram_follower_scraper.py</code>) and execute it from your terminal:</p>
+        <p>
+          To run the scraper, save the above code in a Python file (e.g.,
+          <code>instagram_follower_scraper.py</code>) and execute it from your
+          terminal:
+        </p>
 
         <pre><code class="language-bash">python instagram_follower_scraper.py</code></pre>
 
-        <p>The script will start scraping followers and save the data to a CSV file in the same directory.</p>
+        <p>
+          The script will start scraping followers and save the data to a CSV
+          file in the same directory.
+        </p>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Important Considerations</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Important Considerations
+        </h2>
 
         <ol class="list-decimal pl-6 space-y-2 my-6">
-          <li><strong>Rate Limiting</strong>: Instagram has strict rate limits. The script may take a long time for accounts with many followers, and Instagram might temporarily block access if you make too many requests too quickly.</li>
-          <li><strong>Authentication</strong>: For better results and to avoid blocks, it's recommended to log in with your Instagram account. However, use this feature responsibly to avoid account restrictions.</li>
-          <li><strong>Private Profiles</strong>: You can only scrape followers of private profiles if you're logged in and following that profile.</li>
-          <li><strong>Ethical Considerations</strong>: Always respect users' privacy and Instagram's terms of service. Use the scraped data responsibly and ethically.</li>
-          <li><strong>Legal Implications</strong>: Be aware of the legal aspects of web scraping in your jurisdiction. Always review and comply with Instagram's terms of service and API usage guidelines.</li>
+          <li>
+            <strong>Rate Limiting</strong>: Instagram has strict rate limits.
+            The script may take a long time for accounts with many followers,
+            and Instagram might temporarily block access if you make too many
+            requests too quickly.
+          </li>
+          <li>
+            <strong>Authentication</strong>: For better results and to avoid
+            blocks, it's recommended to log in with your Instagram account.
+            However, use this feature responsibly to avoid account restrictions.
+          </li>
+          <li>
+            <strong>Private Profiles</strong>: You can only scrape followers of
+            private profiles if you're logged in and following that profile.
+          </li>
+          <li>
+            <strong>Ethical Considerations</strong>: Always respect users'
+            privacy and Instagram's terms of service. Use the scraped data
+            responsibly and ethically.
+          </li>
+          <li>
+            <strong>Legal Implications</strong>: Be aware of the legal aspects
+            of web scraping in your jurisdiction. Always review and comply with
+            Instagram's terms of service and API usage guidelines.
+          </li>
         </ol>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Conclusion</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Conclusion
+        </h2>
 
-        <p>Scraping Instagram followers can provide valuable insights for businesses and researchers. This Python script offers a starting point for gathering follower data, which can be further analyzed for various purposes such as market research, influencer identification, or competitive analysis.</p>
+        <p>
+          Scraping Instagram followers can provide valuable insights for
+          businesses and researchers. This Python script offers a starting point
+          for gathering follower data, which can be further analyzed for various
+          purposes such as market research, influencer identification, or
+          competitive analysis.
+        </p>
 
-        <p>Remember to use this tool responsibly and in compliance with Instagram's policies. Happy scraping!</p>
+        <p>
+          Remember to use this tool responsibly and in compliance with
+          Instagram's policies. Happy scraping!
+        </p>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Additional Resources</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Additional Resources
+        </h2>
 
         <ul class="list-disc pl-6 space-y-2 my-6">
-          <li><a href="https://instaloader.github.io/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">Instaloader Documentation</a></li>
-          <li><a href="https://www.instagram.com/developer/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">Instagram API Documentation</a></li>
-          <li><a href="https://docs.python.org/3/library/csv.html" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">Python CSV Module Documentation</a></li>
+          <li>
+            <a
+              href="https://instaloader.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+              >Instaloader Documentation</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/developer/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+              >Instagram API Documentation</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.python.org/3/library/csv.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+              >Python CSV Module Documentation</a
+            >
+          </li>
         </ul>
       </article>
     </main>
@@ -180,10 +323,13 @@ print(f"Scraping complete. Data saved to {csv_file}")</code></pre>
       </div>
       <div class="flex flex-row gap-24">
         <div class="flex flex-col text-sm gap-4">
-            <div class="font-medium">Resources</div>
-            <a class="text-zinc-500 dark:text-zinc-400 cursor-pointer" href="/blog">
+          <div class="font-medium">Resources</div>
+          <a
+            class="text-zinc-500 dark:text-zinc-400 cursor-pointer"
+            href="/blog"
+          >
             Blog
-            </a>
+          </a>
         </div>
         <div class="flex flex-col text-sm gap-4">
           <div class="font-medium">Contact</div>

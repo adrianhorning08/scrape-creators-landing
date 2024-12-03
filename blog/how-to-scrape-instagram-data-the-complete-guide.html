@@ -7,6 +7,21 @@
     <meta charset="utf-8" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-GSSJK7CVY2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-GSSJK7CVY2");
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,17 +30,12 @@
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-        How to Scrape Instagram Data: The Complete Guide
-    </title>
+    <title>How to Scrape Instagram Data: The Complete Guide</title>
     <meta
       name="description"
       content="Learn how to scrape Instagram data using Python and the Instaloader library. This guide provides a step-by-step tutorial on how to authenticate, retrieve, and analyze data from Instagram posts."
     />
-    <meta
-      name="keywords"
-      content="blog, web scraping, social media, api"
-    />
+    <meta name="keywords" content="blog, web scraping, social media, api" />
     <meta name="author" content="Adrian Horning" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
 
@@ -42,10 +52,16 @@
     <!-- Navigation Links -->
     <nav class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex justify-between items-center">
-        <a href="/" class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400">
+        <a
+          href="/"
+          class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400"
+        >
           Scrape Creators Home
         </a>
-        <a href="/blog" class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400">
+        <a
+          href="/blog"
+          class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400"
+        >
           &larr; Back to All Posts
         </a>
       </div>
@@ -54,7 +70,9 @@
     <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <!-- Blog Post Header -->
       <header class="mb-10">
-        <h1 class="text-4xl font-bold mb-4">How to Scrape Instagram Data: The Complete Guide</h1>
+        <h1 class="text-4xl font-bold mb-4">
+          How to Scrape Instagram Data: The Complete Guide
+        </h1>
         <div class="flex items-center text-zinc-500 dark:text-zinc-400">
           <span>By Adrian Horning</span>
           <span class="mx-2">•</span>
@@ -63,21 +81,52 @@
       </header>
 
       <!-- Featured Image -->
-      <img src="../assets/scrape_instagram_data_complete_guide.png" alt="Featured image" class="w-full h-auto rounded-lg shadow-md mb-10">
+      <img
+        src="../assets/scrape_instagram_data_complete_guide.png"
+        alt="Featured image"
+        class="w-full h-auto rounded-lg shadow-md mb-10"
+      />
 
       <!-- Blog Post Content -->
       <article class="prose prose-zinc dark:prose-invert max-w-none space-y-6">
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Understanding Instagram Scraping</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Understanding Instagram Scraping
+        </h2>
 
-        <p>Instagram scraping involves extracting publicly available data from the platform using automated tools or scripts. This can include information such as user profiles, posts, comments, likes, followers, and hashtags<sup>[1][2]</sup>. By analyzing this data, businesses can gain valuable insights into their target audience, monitor competitors, and identify emerging trends.</p>
+        <p>
+          Instagram scraping involves extracting publicly available data from
+          the platform using automated tools or scripts. This can include
+          information such as user profiles, posts, comments, likes, followers,
+          and hashtags<sup>[1][2]</sup>. By analyzing this data, businesses can
+          gain valuable insights into their target audience, monitor
+          competitors, and identify emerging trends.
+        </p>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Tools and Techniques for Instagram Scraping</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Tools and Techniques for Instagram Scraping
+        </h2>
 
-        <p>There are several approaches to scraping Instagram data, each with its own advantages and limitations:</p>
+        <p>
+          There are several approaches to scraping Instagram data, each with its
+          own advantages and limitations:
+        </p>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">1. Web Scraping</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          1. Web Scraping
+        </h3>
 
-        <p>Web scraping involves extracting data directly from Instagram's website by analyzing its HTML structure. This method can be implemented using popular Python libraries such as BeautifulSoup, Scrapy, and Requests<sup>[1]</sup>.</p>
+        <p>
+          Web scraping involves extracting data directly from Instagram's
+          website by analyzing its HTML structure. This method can be
+          implemented using popular Python libraries such as BeautifulSoup,
+          Scrapy, and Requests<sup>[1]</sup>.
+        </p>
 
         <p><strong>Pros:</strong></p>
         <ul>
@@ -91,9 +140,18 @@
           <li>May be blocked by Instagram's anti-scraping measures</li>
         </ul>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">2. API Scraping</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          2. API Scraping
+        </h3>
 
-        <p>API scraping involves using Instagram's official API or third-party APIs to access data. While Instagram's official API has become more restricted over time, some third-party services still offer API access to certain types of data<sup>[1][3]</sup>.</p>
+        <p>
+          API scraping involves using Instagram's official API or third-party
+          APIs to access data. While Instagram's official API has become more
+          restricted over time, some third-party services still offer API access
+          to certain types of data<sup>[1][3]</sup>.
+        </p>
 
         <p><strong>Pros:</strong></p>
         <ul>
@@ -107,9 +165,18 @@
           <li>May require paid subscriptions</li>
         </ul>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">3. Automation Tools</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          3. Automation Tools
+        </h3>
 
-        <p>Several dedicated Instagram scraping tools and services are available, such as Octoparse, WebHarvy, and Instaloader<sup>[2][4]</sup>. These tools often provide user-friendly interfaces and pre-built scraping templates.</p>
+        <p>
+          Several dedicated Instagram scraping tools and services are available,
+          such as Octoparse, WebHarvy, and Instaloader<sup>[2][4]</sup>. These
+          tools often provide user-friendly interfaces and pre-built scraping
+          templates.
+        </p>
 
         <p><strong>Pros:</strong></p>
         <ul>
@@ -123,22 +190,57 @@
           <li>Limited customization options</li>
         </ul>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Step-by-Step Guide to Instagram Scraping</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Step-by-Step Guide to Instagram Scraping
+        </h2>
 
         <p>Here's a general process for scraping Instagram data:</p>
 
         <ol>
-          <li><strong>Define your objectives:</strong> Clearly identify the type of data you need and how you plan to use it<sup>[2]</sup>.</li>
-          <li><strong>Choose your tool:</strong> Select a scraping method or tool that best fits your technical skills and data requirements<sup>[2]</sup>.</li>
-          <li><strong>Set up authentication:</strong> If using API-based methods, set up the necessary authentication credentials<sup>[3]</sup>.</li>
-          <li><strong>Configure scraping parameters:</strong> Specify the data points you want to collect, such as usernames, post content, or hashtags<sup>[2]</sup>.</li>
-          <li><strong>Implement rate limiting:</strong> To avoid being blocked, implement delays between requests and respect Instagram's usage limits<sup>[1]</sup>.</li>
-          <li><strong>Extract the data:</strong> Run your scraping tool or script to collect the desired data<sup>[2]</sup>.</li>
-          <li><strong>Clean and process the data:</strong> Remove any irrelevant information and format the data for analysis<sup>[2]</sup>.</li>
-          <li><strong>Analyze and visualize:</strong> Use data analysis tools to derive insights from the scraped data<sup>[2]</sup>.</li>
+          <li>
+            <strong>Define your objectives:</strong> Clearly identify the type
+            of data you need and how you plan to use it<sup>[2]</sup>.
+          </li>
+          <li>
+            <strong>Choose your tool:</strong> Select a scraping method or tool
+            that best fits your technical skills and data
+            requirements<sup>[2]</sup>.
+          </li>
+          <li>
+            <strong>Set up authentication:</strong> If using API-based methods,
+            set up the necessary authentication credentials<sup>[3]</sup>.
+          </li>
+          <li>
+            <strong>Configure scraping parameters:</strong> Specify the data
+            points you want to collect, such as usernames, post content, or
+            hashtags<sup>[2]</sup>.
+          </li>
+          <li>
+            <strong>Implement rate limiting:</strong> To avoid being blocked,
+            implement delays between requests and respect Instagram's usage
+            limits<sup>[1]</sup>.
+          </li>
+          <li>
+            <strong>Extract the data:</strong> Run your scraping tool or script
+            to collect the desired data<sup>[2]</sup>.
+          </li>
+          <li>
+            <strong>Clean and process the data:</strong> Remove any irrelevant
+            information and format the data for analysis<sup>[2]</sup>.
+          </li>
+          <li>
+            <strong>Analyze and visualize:</strong> Use data analysis tools to
+            derive insights from the scraped data<sup>[2]</sup>.
+          </li>
         </ol>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Types of Data You Can Scrape</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Types of Data You Can Scrape
+        </h2>
 
         <p>Instagram offers a wealth of data that can be scraped, including:</p>
 
@@ -151,55 +253,174 @@
           <li>Engagement metrics (likes, comments, shares)</li>
         </ul>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Legal and Ethical Considerations</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Legal and Ethical Considerations
+        </h2>
 
-        <p>It's crucial to approach Instagram scraping with caution and respect for legal and ethical boundaries:</p>
+        <p>
+          It's crucial to approach Instagram scraping with caution and respect
+          for legal and ethical boundaries:
+        </p>
 
         <ol>
-          <li><strong>Terms of Service:</strong> Instagram's terms prohibit automated data collection without explicit permission<sup>[3]</sup>. Violating these terms can result in account suspension or legal action.</li>
-          <li><strong>Privacy concerns:</strong> Ensure you're only collecting publicly available data and respecting user privacy<sup>[3]</sup>.</li>
-          <li><strong>Data usage:</strong> Be transparent about how you intend to use the scraped data and obtain consent when necessary.</li>
-          <li><strong>Rate limiting:</strong> Implement reasonable rate limits to avoid overloading Instagram's servers<sup>[1]</sup>.</li>
+          <li>
+            <strong>Terms of Service:</strong> Instagram's terms prohibit
+            automated data collection without explicit permission<sup>[3]</sup>.
+            Violating these terms can result in account suspension or legal
+            action.
+          </li>
+          <li>
+            <strong>Privacy concerns:</strong> Ensure you're only collecting
+            publicly available data and respecting user privacy<sup>[3]</sup>.
+          </li>
+          <li>
+            <strong>Data usage:</strong> Be transparent about how you intend to
+            use the scraped data and obtain consent when necessary.
+          </li>
+          <li>
+            <strong>Rate limiting:</strong> Implement reasonable rate limits to
+            avoid overloading Instagram's servers<sup>[1]</sup>.
+          </li>
         </ol>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Best Practices for Instagram Scraping</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Best Practices for Instagram Scraping
+        </h2>
 
-        <p>To maximize the effectiveness of your scraping efforts while minimizing risks:</p>
+        <p>
+          To maximize the effectiveness of your scraping efforts while
+          minimizing risks:
+        </p>
 
         <ol>
-          <li><strong>Use proxies:</strong> Rotate IP addresses to reduce the risk of being blocked<sup>[1]</sup>.</li>
-          <li><strong>Mimic human behavior:</strong> Implement random delays and vary your scraping patterns to appear more natural<sup>[1]</sup>.</li>
-          <li><strong>Stay updated:</strong> Instagram frequently updates its platform, so keep your scraping tools and techniques current<sup>[3]</sup>.</li>
-          <li><strong>Respect robots.txt:</strong> Adhere to the guidelines set in Instagram's robots.txt file<sup>[3]</sup>.</li>
-          <li><strong>Store data securely:</strong> Implement proper data storage and protection measures for the scraped information.</li>
+          <li>
+            <strong>Use proxies:</strong> Rotate IP addresses to reduce the risk
+            of being blocked<sup>[1]</sup>.
+          </li>
+          <li>
+            <strong>Mimic human behavior:</strong> Implement random delays and
+            vary your scraping patterns to appear more natural<sup>[1]</sup>.
+          </li>
+          <li>
+            <strong>Stay updated:</strong> Instagram frequently updates its
+            platform, so keep your scraping tools and techniques
+            current<sup>[3]</sup>.
+          </li>
+          <li>
+            <strong>Respect robots.txt:</strong> Adhere to the guidelines set in
+            Instagram's robots.txt file<sup>[3]</sup>.
+          </li>
+          <li>
+            <strong>Store data securely:</strong> Implement proper data storage
+            and protection measures for the scraped information.
+          </li>
         </ol>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Alternatives to Direct Scraping</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Alternatives to Direct Scraping
+        </h2>
 
-        <p>If direct scraping poses too many risks or challenges, consider these alternatives:</p>
+        <p>
+          If direct scraping poses too many risks or challenges, consider these
+          alternatives:
+        </p>
 
         <ol>
-          <li><strong>Official Instagram API:</strong> While limited, the official API can provide access to some data types with proper authentication<sup>[3]</sup>.</li>
-          <li><strong>Third-party data providers:</strong> Services like Phyllo offer compliant access to Instagram data through partnerships with the platform<sup>[3]</sup>.</li>
-          <li><strong>Manual data collection:</strong> For smaller datasets, manual collection may be a viable option.</li>
+          <li>
+            <strong>Official Instagram API:</strong> While limited, the official
+            API can provide access to some data types with proper
+            authentication<sup>[3]</sup>.
+          </li>
+          <li>
+            <strong>Third-party data providers:</strong> Services like Phyllo
+            offer compliant access to Instagram data through partnerships with
+            the platform<sup>[3]</sup>.
+          </li>
+          <li>
+            <strong>Manual data collection:</strong> For smaller datasets,
+            manual collection may be a viable option.
+          </li>
         </ol>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Conclusion</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Conclusion
+        </h2>
 
-        <p>Instagram scraping can provide valuable insights for businesses and researchers, but it must be approached carefully and ethically. By choosing the right tools, respecting platform guidelines, and implementing best practices, you can effectively collect and analyze Instagram data to inform your strategies and decision-making processes.</p>
+        <p>
+          Instagram scraping can provide valuable insights for businesses and
+          researchers, but it must be approached carefully and ethically. By
+          choosing the right tools, respecting platform guidelines, and
+          implementing best practices, you can effectively collect and analyze
+          Instagram data to inform your strategies and decision-making
+          processes.
+        </p>
 
-        <p>Remember that the landscape of social media scraping is constantly evolving, with platforms implementing new measures to protect user data. Stay informed about the latest developments and always prioritize ethical data collection practices to ensure the long-term sustainability of your scraping efforts.</p>
+        <p>
+          Remember that the landscape of social media scraping is constantly
+          evolving, with platforms implementing new measures to protect user
+          data. Stay informed about the latest developments and always
+          prioritize ethical data collection practices to ensure the long-term
+          sustainability of your scraping efforts.
+        </p>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Citations</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Citations
+        </h2>
         <ol>
-          <li><a href="https://scrapingant.com/blog/how-to-scrape-instagram">https://scrapingant.com/blog/how-to-scrape-instagram</a></li>
-          <li><a href="https://www.getmagical.com/blog/how-to-scrape-instagram">https://www.getmagical.com/blog/how-to-scrape-instagram</a></li>
-          <li><a href="https://www.getphyllo.com/post/instagram-scraping">https://www.getphyllo.com/post/instagram-scraping</a></li>
-          <li><a href="https://hackernoon.com/instagram-scraper-how-to-scrape-data-from-instagram-2021-77w35h5">https://hackernoon.com/instagram-scraper-how-to-scrape-data-from-instagram-2021-77w35h5</a></li>
-          <li><a href="https://www.linkedin.com/advice/0/what-best-techniques-web-scraping-instagram-data-ppxce">https://www.linkedin.com/advice/0/what-best-techniques-web-scraping-instagram-data-ppxce</a></li>
-          <li><a href="https://blog.apify.com/scrape-instagram-posts-comments-and-more-21d05506aeb3/">https://blog.apify.com/scrape-instagram-posts-comments-and-more-21d05506aeb3/</a></li>
-          <li><a href="https://www.reddit.com/r/webscraping/comments/xvyisf/advice_on_scraping_instagram/">https://www.reddit.com/r/webscraping/comments/xvyisf/advice_on_scraping_instagram/</a></li>
-          <li><a href="https://scrapfly.io/blog/how-to-scrape-instagram/">https://scrapfly.io/blog/how-to-scrape-instagram/</a></li>
+          <li>
+            <a href="https://scrapingant.com/blog/how-to-scrape-instagram"
+              >https://scrapingant.com/blog/how-to-scrape-instagram</a
+            >
+          </li>
+          <li>
+            <a href="https://www.getmagical.com/blog/how-to-scrape-instagram"
+              >https://www.getmagical.com/blog/how-to-scrape-instagram</a
+            >
+          </li>
+          <li>
+            <a href="https://www.getphyllo.com/post/instagram-scraping"
+              >https://www.getphyllo.com/post/instagram-scraping</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://hackernoon.com/instagram-scraper-how-to-scrape-data-from-instagram-2021-77w35h5"
+              >https://hackernoon.com/instagram-scraper-how-to-scrape-data-from-instagram-2021-77w35h5</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/advice/0/what-best-techniques-web-scraping-instagram-data-ppxce"
+              >https://www.linkedin.com/advice/0/what-best-techniques-web-scraping-instagram-data-ppxce</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://blog.apify.com/scrape-instagram-posts-comments-and-more-21d05506aeb3/"
+              >https://blog.apify.com/scrape-instagram-posts-comments-and-more-21d05506aeb3/</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.reddit.com/r/webscraping/comments/xvyisf/advice_on_scraping_instagram/"
+              >https://www.reddit.com/r/webscraping/comments/xvyisf/advice_on_scraping_instagram/</a
+            >
+          </li>
+          <li>
+            <a href="https://scrapfly.io/blog/how-to-scrape-instagram/"
+              >https://scrapfly.io/blog/how-to-scrape-instagram/</a
+            >
+          </li>
         </ol>
       </article>
     </main>
@@ -216,10 +437,13 @@
       </div>
       <div class="flex flex-row gap-24">
         <div class="flex flex-col text-sm gap-4">
-            <div class="font-medium">Resources</div>
-            <a class="text-zinc-500 dark:text-zinc-400 cursor-pointer" href="/blog">
+          <div class="font-medium">Resources</div>
+          <a
+            class="text-zinc-500 dark:text-zinc-400 cursor-pointer"
+            href="/blog"
+          >
             Blog
-            </a>
+          </a>
         </div>
         <div class="flex flex-col text-sm gap-4">
           <div class="font-medium">Contact</div>

@@ -7,6 +7,21 @@
     <meta charset="utf-8" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-GSSJK7CVY2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-GSSJK7CVY2");
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,17 +30,12 @@
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-        How to Make an Instagram Bot with Python
-    </title>
+    <title>How to Make an Instagram Bot with Python</title>
     <meta
       name="description"
       content="Learn how to create an Instagram bot using Python. This guide provides a step-by-step tutorial on building a bot that can automate tasks like liking and commenting on posts, following users, and more."
     />
-    <meta
-      name="keywords"
-      content="blog, web scraping, social media, api"
-    />
+    <meta name="keywords" content="blog, web scraping, social media, api" />
     <meta name="author" content="Adrian Horning" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
 
@@ -42,10 +52,16 @@
     <!-- Navigation Links -->
     <nav class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex justify-between items-center">
-        <a href="/" class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400">
+        <a
+          href="/"
+          class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400"
+        >
           Scrape Creators Home
         </a>
-        <a href="/blog" class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400">
+        <a
+          href="/blog"
+          class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400"
+        >
           &larr; Back to All Posts
         </a>
       </div>
@@ -54,7 +70,9 @@
     <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <!-- Blog Post Header -->
       <header class="mb-10">
-        <h1 class="text-4xl font-bold mb-4">How to Make an Instagram Bot with Python</h1>
+        <h1 class="text-4xl font-bold mb-4">
+          How to Make an Instagram Bot with Python
+        </h1>
         <div class="flex items-center text-zinc-500 dark:text-zinc-400">
           <span>By Adrian Horning</span>
           <span class="mx-2">•</span>
@@ -63,31 +81,86 @@
       </header>
 
       <!-- Featured Image -->
-      <img src="../assets/instagram_bot_with_python.png" alt="Featured image" class="w-full h-auto rounded-lg shadow-md mb-10">
+      <img
+        src="../assets/instagram_bot_with_python.png"
+        alt="Featured image"
+        class="w-full h-auto rounded-lg shadow-md mb-10"
+      />
 
       <!-- Blog Post Content -->
       <article class="prose prose-zinc dark:prose-invert max-w-none space-y-6">
-        <p>Instagram has become one of the most popular social media platforms, with millions of active users sharing photos, videos, and stories every day. For businesses and individuals looking to grow their presence on the platform, automation can be a powerful tool. In this guide, we'll walk through how to create an Instagram bot using Python to automate various activities like following users, liking posts, and leaving comments.</p>
+        <p>
+          Instagram has become one of the most popular social media platforms,
+          with millions of active users sharing photos, videos, and stories
+          every day. For businesses and individuals looking to grow their
+          presence on the platform, automation can be a powerful tool. In this
+          guide, we'll walk through how to create an Instagram bot using Python
+          to automate various activities like following users, liking posts, and
+          leaving comments.
+        </p>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Setting Up Your Environment</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Setting Up Your Environment
+        </h2>
 
-        <p>Before we dive into coding our Instagram bot, we need to set up our development environment:</p>
+        <p>
+          Before we dive into coding our Instagram bot, we need to set up our
+          development environment:
+        </p>
 
         <ol class="list-decimal pl-6 space-y-2 my-6">
-          <li>Install Python: If you don't already have Python installed, download and install the latest version from <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">python.org</a>.</li>
-          <li>Install required libraries: We'll be using the InstaPy library, which provides a high-level API for Instagram automation. Install it using pip:
+          <li>
+            Install Python: If you don't already have Python installed, download
+            and install the latest version from
+            <a
+              href="https://www.python.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+              >python.org</a
+            >.
+          </li>
+          <li>
+            Install required libraries: We'll be using the InstaPy library,
+            which provides a high-level API for Instagram automation. Install it
+            using pip:
             <pre><code class="language-bash">pip install instapy</code></pre>
           </li>
-          <li>Install a web driver: InstaPy uses Selenium under the hood, which requires a web driver. The latest versions of InstaPy support Firefox, so make sure you have Firefox installed on your system<a href="https://realpython.com/instagram-bot-python-instapy/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</li>
+          <li>
+            Install a web driver: InstaPy uses Selenium under the hood, which
+            requires a web driver. The latest versions of InstaPy support
+            Firefox, so make sure you have Firefox installed on your system<a
+              href="https://realpython.com/instagram-bot-python-instapy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+              >[1]</a
+            >.
+          </li>
         </ol>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Creating Your Instagram Bot</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Creating Your Instagram Bot
+        </h2>
 
-        <p>Now that we have our environment set up, let's create a basic Instagram bot:</p>
+        <p>
+          Now that we have our environment set up, let's create a basic
+          Instagram bot:
+        </p>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">Step 1: Importing Libraries and Logging In</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          Step 1: Importing Libraries and Logging In
+        </h3>
 
-        <p>First, we'll import the necessary modules and log in to Instagram:</p>
+        <p>
+          First, we'll import the necessary modules and log in to Instagram:
+        </p>
 
         <pre><code class="language-python">from instapy import InstaPy
 
@@ -95,56 +168,135 @@
 session = InstaPy(username="your_username", password="your_password")
 session.login()</code></pre>
 
-        <p>Replace "your_username" and "your_password" with your actual Instagram credentials<a href="https://realpython.com/instagram-bot-python-instapy/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</p>
+        <p>
+          Replace "your_username" and "your_password" with your actual Instagram
+          credentials<a
+            href="https://realpython.com/instagram-bot-python-instapy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+            >[1]</a
+          >.
+        </p>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">Step 2: Defining Bot Actions</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          Step 2: Defining Bot Actions
+        </h3>
 
-        <p>Now we can define the actions our bot will take. Let's start with liking posts based on hashtags:</p>
+        <p>
+          Now we can define the actions our bot will take. Let's start with
+          liking posts based on hashtags:
+        </p>
 
         <pre><code class="language-python"># Like posts with specific hashtags
 session.like_by_tags(["bmw", "mercedes"], amount=5)</code></pre>
 
-        <p>This code will like 5 posts for each of the specified hashtags<a href="https://realpython.com/instagram-bot-python-instapy/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</p>
+        <p>
+          This code will like 5 posts for each of the specified hashtags<a
+            href="https://realpython.com/instagram-bot-python-instapy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+            >[1]</a
+          >.
+        </p>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">Step 3: Following Users</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          Step 3: Following Users
+        </h3>
 
-        <p>We can also set up our bot to follow users based on certain criteria:</p>
+        <p>
+          We can also set up our bot to follow users based on certain criteria:
+        </p>
 
         <pre><code class="language-python"># Follow users who post about cars
 session.set_do_follow(True, percentage=50)
 session.set_user_interact(amount=3, randomize=True, percentage=100, media='Photo')
 session.interact_user_followers(['bmw', 'mercedesbenz'], amount=10, randomize=True)</code></pre>
 
-        <p>This code will follow 50% of the users it interacts with, interact with 3 of their posts, and target followers of the specified accounts<a href="https://realpython.com/instagram-bot-python-instapy/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</p>
+        <p>
+          This code will follow 50% of the users it interacts with, interact
+          with 3 of their posts, and target followers of the specified
+          accounts<a
+            href="https://realpython.com/instagram-bot-python-instapy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+            >[1]</a
+          >.
+        </p>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">Step 4: Commenting on Posts</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          Step 4: Commenting on Posts
+        </h3>
 
-        <p>To engage more deeply with content, we can set up our bot to leave comments:</p>
+        <p>
+          To engage more deeply with content, we can set up our bot to leave
+          comments:
+        </p>
 
         <pre><code class="language-python"># Set up comments
 comments = ['Nice car!', 'Great photo!', 'Awesome!']
 session.set_do_comment(True, percentage=25)
 session.set_comments(comments)</code></pre>
 
-        <p>This will leave comments on 25% of the posts it interacts with, using one of the predefined comments<a href="https://realpython.com/instagram-bot-python-instapy/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</p>
+        <p>
+          This will leave comments on 25% of the posts it interacts with, using
+          one of the predefined comments<a
+            href="https://realpython.com/instagram-bot-python-instapy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+            >[1]</a
+          >.
+        </p>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">Step 5: Setting Limits</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          Step 5: Setting Limits
+        </h3>
 
-        <p>It's important to set limits to avoid overusing the bot and potentially getting flagged by Instagram:</p>
+        <p>
+          It's important to set limits to avoid overusing the bot and
+          potentially getting flagged by Instagram:
+        </p>
 
         <pre><code class="language-python"># Set quotas
 session.set_quota_supervisor(enabled=True, peak_comments_daily=240, peak_comments_hourly=21)</code></pre>
 
-        <p>This sets a maximum of 240 comments per day and 21 comments per hour<a href="https://realpython.com/instagram-bot-python-instapy/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</p>
+        <p>
+          This sets a maximum of 240 comments per day and 21 comments per hour<a
+            href="https://realpython.com/instagram-bot-python-instapy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+            >[1]</a
+          >.
+        </p>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">Step 6: Ending the Session</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          Step 6: Ending the Session
+        </h3>
 
         <p>Finally, we need to end the session:</p>
 
         <pre><code class="language-python"># End the session
 session.end()</code></pre>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Putting It All Together</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Putting It All Together
+        </h2>
 
         <p>Here's what our complete Instagram bot script looks like:</p>
 
@@ -173,66 +325,228 @@ session.set_quota_supervisor(enabled=True, peak_comments_daily=240, peak_comment
 # End the session
 session.end()</code></pre>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Advanced Features</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Advanced Features
+        </h2>
 
-        <p>Once you've mastered the basics, you can explore more advanced features of InstaPy:</p>
+        <p>
+          Once you've mastered the basics, you can explore more advanced
+          features of InstaPy:
+        </p>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">Unfollowing Users</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          Unfollowing Users
+        </h3>
 
-        <p>You can set up your bot to unfollow users who don't follow you back:</p>
+        <p>
+          You can set up your bot to unfollow users who don't follow you back:
+        </p>
 
         <pre><code class="language-python">session.unfollow_users(amount=10, nonFollowers=True, style="FIFO", unfollow_after=3*60*60, sleep_delay=450)</code></pre>
 
-        <p>This will unfollow 10 non-followers, waiting 3 hours before unfollowing and sleeping for 450 seconds between actions<a href="https://realpython.com/instagram-bot-python-instapy/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</p>
+        <p>
+          This will unfollow 10 non-followers, waiting 3 hours before
+          unfollowing and sleeping for 450 seconds between actions<a
+            href="https://realpython.com/instagram-bot-python-instapy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+            >[1]</a
+          >.
+        </p>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">Interacting with Specific Users</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          Interacting with Specific Users
+        </h3>
 
         <p>You can target specific users to interact with:</p>
 
         <pre><code class="language-python">session.interact_by_users(['user1', 'user2', 'user3'], amount=5, randomize=True)</code></pre>
 
-        <p>This will interact with 5 random posts from each of the specified users<a href="https://realpython.com/instagram-bot-python-instapy/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</p>
+        <p>
+          This will interact with 5 random posts from each of the specified
+          users<a
+            href="https://realpython.com/instagram-bot-python-instapy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+            >[1]</a
+          >.
+        </p>
 
-        <h3 class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4">Filtering Content</h3>
+        <h3
+          class="text-xl font-semibold text-cyan-600 dark:text-cyan-400 mt-8 mb-4"
+        >
+          Filtering Content
+        </h3>
 
         <p>InstaPy allows you to filter the content you interact with:</p>
 
         <pre><code class="language-python">session.set_relationship_bounds(enabled=True, potency_ratio=None, delimit_by_numbers=True, max_followers=5000, max_following=5555, min_followers=45, min_following=77)</code></pre>
 
-        <p>This sets criteria for the types of accounts your bot will interact with, based on their follower and following counts<a href="https://realpython.com/instagram-bot-python-instapy/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">[1]</a>.</p>
+        <p>
+          This sets criteria for the types of accounts your bot will interact
+          with, based on their follower and following counts<a
+            href="https://realpython.com/instagram-bot-python-instapy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+            >[1]</a
+          >.
+        </p>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Best Practices and Considerations</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Best Practices and Considerations
+        </h2>
 
-        <p>While Instagram bots can be powerful tools, it's important to use them responsibly:</p>
+        <p>
+          While Instagram bots can be powerful tools, it's important to use them
+          responsibly:
+        </p>
 
         <ol class="list-decimal pl-6 space-y-2 my-6">
-          <li><strong>Respect Instagram's terms of service</strong>: Excessive automation can lead to account suspension.</li>
-          <li><strong>Use realistic interaction rates</strong>: Mimic human behavior by setting reasonable limits on actions per hour and day.</li>
-          <li><strong>Diversify your actions</strong>: Don't just like posts or follow users. Mix up your bot's activities to appear more natural.</li>
-          <li><strong>Monitor your bot</strong>: Regularly check on your bot's activities and adjust settings as needed.</li>
-          <li><strong>Use proxies</strong>: Consider using proxy servers to avoid IP bans, especially if running multiple bots.</li>
-          <li><strong>Keep your bot updated</strong>: Instagram frequently updates its platform, so make sure to keep your bot and its dependencies up to date.</li>
+          <li>
+            <strong>Respect Instagram's terms of service</strong>: Excessive
+            automation can lead to account suspension.
+          </li>
+          <li>
+            <strong>Use realistic interaction rates</strong>: Mimic human
+            behavior by setting reasonable limits on actions per hour and day.
+          </li>
+          <li>
+            <strong>Diversify your actions</strong>: Don't just like posts or
+            follow users. Mix up your bot's activities to appear more natural.
+          </li>
+          <li>
+            <strong>Monitor your bot</strong>: Regularly check on your bot's
+            activities and adjust settings as needed.
+          </li>
+          <li>
+            <strong>Use proxies</strong>: Consider using proxy servers to avoid
+            IP bans, especially if running multiple bots.
+          </li>
+          <li>
+            <strong>Keep your bot updated</strong>: Instagram frequently updates
+            its platform, so make sure to keep your bot and its dependencies up
+            to date.
+          </li>
         </ol>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Conclusion</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Conclusion
+        </h2>
 
-        <p>Creating an Instagram bot with Python and InstaPy can be a powerful way to grow your Instagram presence. By automating likes, follows, and comments, you can increase your engagement and reach on the platform. However, it's crucial to use these tools responsibly and in compliance with Instagram's terms of service.</p>
+        <p>
+          Creating an Instagram bot with Python and InstaPy can be a powerful
+          way to grow your Instagram presence. By automating likes, follows, and
+          comments, you can increase your engagement and reach on the platform.
+          However, it's crucial to use these tools responsibly and in compliance
+          with Instagram's terms of service.
+        </p>
 
-        <p>Remember, while automation can be helpful, genuine engagement and high-quality content are still the keys to long-term success on Instagram. Use your bot as a supplement to, not a replacement for, your personal efforts on the platform.</p>
+        <p>
+          Remember, while automation can be helpful, genuine engagement and
+          high-quality content are still the keys to long-term success on
+          Instagram. Use your bot as a supplement to, not a replacement for,
+          your personal efforts on the platform.
+        </p>
 
-        <p>With the steps and code samples provided in this guide, you should now have a solid foundation for creating your own Instagram bot. Experiment with different settings and features to find what works best for your specific needs and goals.</p>
+        <p>
+          With the steps and code samples provided in this guide, you should now
+          have a solid foundation for creating your own Instagram bot.
+          Experiment with different settings and features to find what works
+          best for your specific needs and goals.
+        </p>
 
-        <h2 class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800">Citations</h2>
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Citations
+        </h2>
 
         <ol class="list-decimal pl-6 space-y-2 my-6">
-          <li><a href="https://realpython.com/instagram-bot-python-instapy/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">https://realpython.com/instagram-bot-python-instapy/</a></li>
-          <li><a href="https://www.geeksforgeeks.org/make-an-instagram-bot-with-python/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">https://www.geeksforgeeks.org/make-an-instagram-bot-with-python/</a></li>
-          <li><a href="https://www.geeksforgeeks.org/how-to-make-an-instagram-bot-with-python-and-instapy/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">https://www.geeksforgeeks.org/how-to-make-an-instagram-bot-with-python-and-instapy/</a></li>
-          <li><a href="https://www.youtube.com/watch?v=uyEIihDoXR8" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">https://www.youtube.com/watch?v=uyEIihDoXR8</a></li>
-          <li><a href="https://www.youtube.com/watch?v=cW7kMeOUr20" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">https://www.youtube.com/watch?v=cW7kMeOUr20</a></li>
-          <li><a href="https://www.youtube.com/watch?v=_odcrBrvxdY" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">https://www.youtube.com/watch?v=_odcrBrvxdY</a></li>
-          <li><a href="https://www.reddit.com/r/Python/comments/tre7to/i_made_a_webbased_instagram_bot_that_scrapes/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">https://www.reddit.com/r/Python/comments/tre7to/i_made_a_webbased_instagram_bot_that_scrapes/</a></li>
-          <li><a href="https://www.reddit.com/r/learnpython/comments/13rq5xu/instagram_bot_using_python/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300">https://www.reddit.com/r/learnpython/comments/13rq5xu/instagram_bot_using_python/</a></li>
+          <li>
+            <a
+              href="https://realpython.com/instagram-bot-python-instapy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+              >https://realpython.com/instagram-bot-python-instapy/</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.geeksforgeeks.org/make-an-instagram-bot-with-python/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+              >https://www.geeksforgeeks.org/make-an-instagram-bot-with-python/</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.geeksforgeeks.org/how-to-make-an-instagram-bot-with-python-and-instapy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+              >https://www.geeksforgeeks.org/how-to-make-an-instagram-bot-with-python-and-instapy/</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/watch?v=uyEIihDoXR8"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+              >https://www.youtube.com/watch?v=uyEIihDoXR8</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/watch?v=cW7kMeOUr20"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+              >https://www.youtube.com/watch?v=cW7kMeOUr20</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/watch?v=_odcrBrvxdY"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+              >https://www.youtube.com/watch?v=_odcrBrvxdY</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.reddit.com/r/Python/comments/tre7to/i_made_a_webbased_instagram_bot_that_scrapes/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+              >https://www.reddit.com/r/Python/comments/tre7to/i_made_a_webbased_instagram_bot_that_scrapes/</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.reddit.com/r/learnpython/comments/13rq5xu/instagram_bot_using_python/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+              >https://www.reddit.com/r/learnpython/comments/13rq5xu/instagram_bot_using_python/</a
+            >
+          </li>
         </ol>
       </article>
     </main>
@@ -249,10 +563,13 @@ session.end()</code></pre>
       </div>
       <div class="flex flex-row gap-24">
         <div class="flex flex-col text-sm gap-4">
-            <div class="font-medium">Resources</div>
-            <a class="text-zinc-500 dark:text-zinc-400 cursor-pointer" href="/blog">
+          <div class="font-medium">Resources</div>
+          <a
+            class="text-zinc-500 dark:text-zinc-400 cursor-pointer"
+            href="/blog"
+          >
             Blog
-            </a>
+          </a>
         </div>
         <div class="flex flex-col text-sm gap-4">
           <div class="font-medium">Contact</div>
