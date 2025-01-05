@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="h-full scroll-smooth bg-white antialiased dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Free Developer Tools | Web Scraping Resources</title>
+    <meta
+      name="description"
+      content="Collection of free developer tools and utilities for web scraping, data extraction, and automation. Built by The Web Scraping Guy."
+    />
+    <meta
+      name="keywords"
+      content="web scraping tools, developer utilities, free tools, data extraction"
+    />
+
+    <style>
+      body {
+        font-family: "Outfit", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="h-full">
+    <header
+      class="flex justify-between text-sm items-center h-14 px-10 lg:px-28 bg-transparent border-neutral-200/10"
+    >
+      <a href="/">
+        <div class="font-semibold tracking-wide">Scrape Creators</div>
+      </a>
+      <div class="hidden lg:flex gap-10 tracking-wide">
+        <a href="/">Home</a>
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#faq">FAQ</a>
+      </div>
+      <div>
+        <a href="https://app.scrapecreators.com/signin">
+          <div class="text-sm font-semibold">Sign Up</div>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <div
+        class="flex flex-col py-10 mt-10 lg:mt-20 lg:flex-row justify-center items-center"
+      >
+        <div class="flex flex-col gap-6 lg:gap-8 px-10 max-w-6xl text-center">
+          <h1
+            class="text-5xl lg:text-7xl font-bold text-center text-gray-900 dark:text-white"
+          >
+            Free Tools
+          </h1>
+          <div class="text-base lg:text-2xl text-zinc-500 dark:text-zinc-400">
+            A collection of powerful utilities to help you work smarter with
+            social media and web data
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools Grid -->
+      <div class="px-10 py-16">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
+        >
+          <!-- TikTok Transcript Tool -->
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-zinc-800 rounded-xl shadow-sm"
+          >
+            <h3 class="text-xl font-semibold mb-3">TikTok Video Transcript</h3>
+            <p class="text-zinc-500 dark:text-zinc-400 mb-4">
+              Instantly get the transcript of any TikTok video. Perfect for
+              content creators, marketers, and researchers who want to analyze
+              video content.
+            </p>
+            <a
+              href="/free-tools/get-tiktok-transcript"
+              class="mt-auto w-full text-center flex justify-center items-center font-medium text-white bg-gradient-to-r from-cyan-500 to-sky-600 rounded-md cursor-pointer h-11 px-8 text-sm"
+            >
+              Get Transcript
+            </a>
+          </div>
+
+          <!-- Placeholder for future tools -->
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <div
+      class="flex flex-col md:flex-row mt-10 gap-10 md:justify-between px-10 md:px-20 lg:px-48 py-14 border-t border-neutral-200/10"
+    >
+      <div class="flex flex-col gap-2">
+        <div class="font-medium text-base">Scrape Creators</div>
+        <div class="text-sm text-zinc-500 dark:text-zinc-400">
+          Copyright © <span id="current-year"></span>. All rights reserved.
+        </div>
+      </div>
+      <div class="flex flex-row gap-24">
+        <div class="flex flex-col text-sm gap-4">
+          <div class="font-medium">Contact</div>
+          <p class="text-zinc-500 dark:text-zinc-400">
+            adrian@thewebscrapingguy.com
+          </p>
+          <a
+            class="text-zinc-500 dark:text-zinc-400"
+            href="https://twitter.com/adrian_horning_"
+            >Twitter</a
+          >
+          <a
+            class="text-zinc-500 dark:text-zinc-400"
+            href="https://instagram.com/adrianhorning"
+            >Instagram</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
