@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="h-full scroll-smooth bg-white antialiased dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100"
+>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-GSSJK7CVY2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-GSSJK7CVY2");
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Get TikTok Video Transcripts</title>
+    <meta
+      name="description"
+      content="Learn how to get TikTok video transcripts with this step-by-step guide. Discover how to extract text from TikTok videos using web scraping techniques."
+    />
+    <meta name="keywords" content="blog, web scraping, social media, api" />
+    <meta name="author" content="Adrian Horning" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
+
+    <script>
+      // Dark mode script (unchanged)
+    </script>
+    <style>
+      body {
+        font-family: "Outfit", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="h-full">
+    <!-- Navigation Links -->
+    <nav class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex justify-between items-center">
+        <a
+          href="/"
+          class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400"
+        >
+          Scrape Creators Home
+        </a>
+        <a
+          href="/blog"
+          class="text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400"
+        >
+          &larr; Back to All Posts
+        </a>
+      </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Blog Post Header -->
+      <header class="mb-10">
+        <h1 class="text-4xl font-bold mb-4">
+          How to Get TikTok Video Transcripts
+        </h1>
+        <div class="flex items-center text-zinc-500 dark:text-zinc-400">
+          <span>By Adrian Horning</span>
+          <span class="mx-2">•</span>
+          <time datetime="2025-01-08">January 8, 2025</time>
+        </div>
+      </header>
+
+      <!-- Featured Image -->
+      <img
+        src="../assets/tiktok_video_transcripts.jpg"
+        alt="Featured image"
+        class="w-full h-auto rounded-lg shadow-md mb-10"
+      />
+
+      <!-- Blog Post Content -->
+      <article class="prose prose-zinc dark:prose-invert max-w-none space-y-6">
+        <p>
+          TikTok is a popular social media platform that allows users to create
+          and share short videos. With its growing popularity, many businesses
+          and researchers are looking for ways to extract valuable insights from
+          TikTok data. One of the most useful types of data to extract is video
+          transcripts.
+        </p>
+
+        <p>
+          In this guide, we'll walk through how to get TikTok video transcripts
+          using an API called Scrape Creators. This API allows you to scrape
+          TikTok videos and extract the transcript of the video.
+        </p>
+
+        <p>In this guide we are going to be using Node.js</p>
+
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Setting Up Your Environment
+        </h2>
+
+        <p>
+          Before we dive into the code, let's set up our development
+          environment:
+        </p>
+
+        <ol class="list-decimal pl-6 space-y-2 my-6">
+          <li>
+            Install Node.js: If you haven't already, download and install
+            Node.js from
+            <a
+              href="https://nodejs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+              >nodejs.org</a
+            >.
+          </li>
+          <li>
+            We will be using axios to make requests to the Scrape Creators API.
+            Install it using npm:
+            <pre><code class="language-bash">npm install axios</code></pre>
+          </li>
+
+          <!-- next, make sure type: module is set in your package.json file -->
+          <li>
+            Make sure type: module is set in your package.json file.
+            <pre><code class="language-json">{
+  "type": "module"
+}</code></pre>
+          </li>
+        </ol>
+
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Getting an API Key
+        </h2>
+
+        <p>
+          To get an API key, you need to sign up for a
+          <a
+            href="https://scrapecreators.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+            >Scrape Creators</a
+          >
+          account.
+        </p>
+
+        <p>
+          Once you have signed up, you can get your API key from the Scrape
+          Creators dashboard.
+        </p>
+
+        <h2
+          class="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mt-12 mb-6 pb-2 border-b border-cyan-200 dark:border-cyan-800"
+        >
+          Getting the Video Transcript
+        </h2>
+
+        <p>
+          Now that we have our API key, we can start scraping TikTok videos.
+        </p>
+
+        <p>
+          We will be using the <code>axios</code> library to make requests to
+          the Scrape Creators API.
+        </p>
+
+        <p>Here is the code to get the transcript of a TikTok video:</p>
+
+        <pre><code class="language-javascript">const axios = require('axios');
+
+import axios from 'axios';
+
+const apiKey = 'YOUR_API_KEY';
+const videoUrl = 'https://www.tiktok.com/@stoolpresidente/video/7457284028102806830';
+
+const { data } = await axios.get(`https://api.scrapecreators.com/v1/tiktok/video?url=${videoUrl}&get_transcript=true`, {
+    headers: {
+        'X-API-KEY': apiKey
+    }
+})
+
+console.log(data);
+</code></pre>
+
+        <p>
+          Notice you also need the param <code>get_transcript=true</code> to get
+          the transcript.
+        </p>
+
+        <p>
+          This will return a JSON object. The transcript will be in the
+          <code>transcript</code> property.
+        </p>
+
+        <p>
+          You can also get the video description, hashtags, and other metadata
+          using the same API.
+        </p>
+
+        <p>And that's it!</p>
+
+        <p>
+          To get even more data from TikTok, or other social media platforms,
+          check out the Scrape Creators API.
+        </p>
+      </article>
+    </main>
+
+    <!-- Footer (unchanged) -->
+    <div
+      class="flex flex-col md:flex-row mt-10 gap-10 md:justify-between px-10 md:px-20 lg:px-48 py-14 border-t border-neutral-200/10"
+    >
+      <div class="flex flex-col gap-2">
+        <div class="font-medium text-base">Scrape Creators</div>
+        <div class="text-sm text-zinc-500 dark:text-zinc-400">
+          Copyright © <span id="current-year"></span>. All rights reserved.
+        </div>
+      </div>
+      <div class="flex flex-row gap-24">
+        <div class="flex flex-col text-sm gap-4">
+          <div class="font-medium">Resources</div>
+          <a
+            class="text-zinc-500 dark:text-zinc-400 cursor-pointer"
+            href="/blog"
+          >
+            Blog
+          </a>
+          <a
+            class="text-zinc-500 dark:text-zinc-400 cursor-pointer"
+            href="/free-tools"
+          >
+            Free Tools
+          </a>
+        </div>
+        <div class="flex flex-col text-sm gap-4">
+          <div class="font-medium">Contact</div>
+          <p class="text-zinc-500 dark:text-zinc-400 cursor-pointer">
+            adrian@thewebscrapingguy.com
+          </p>
+          <a
+            class="text-zinc-500 dark:text-zinc-400 cursor-pointer"
+            href="https://twitter.com/adrian_horning_"
+            >Twitter</a
+          >
+          <a
+            class="text-zinc-500 dark:text-zinc-400 cursor-pointer"
+            href="https://instagram.com/adrianhorning"
+            >Instagram</a
+          >
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
